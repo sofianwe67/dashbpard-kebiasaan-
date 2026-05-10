@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily Flow - Sign In</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "primary": "#000000",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "outline": "#76777d",
+                        "surface-tint": "#565e74",
+                        "surface-container-highest": "#d8e3fb",
+                        "inverse-on-surface": "#ecf1ff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#40c2fd",
+                        "on-surface-variant": "#45464d",
+                        "surface-dim": "#cfdaf2",
+                        "tertiary-fixed": "#6bff8f",
+                        "tertiary": "#000000",
+                        "primary-container": "#131b2e",
+                        "on-tertiary-fixed-variant": "#005321",
+                        "on-secondary-container": "#004d6a",
+                        "surface": "#f9f9ff",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#7bd0ff",
+                        "on-primary": "#ffffff",
+                        "background": "#f9f9ff",
+                        "on-tertiary-fixed": "#002109",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#263143",
+                        "outline-variant": "#c6c6cd",
+                        "on-background": "#111c2d",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e7eeff",
+                        "surface-variant": "#d8e3fb",
+                        "tertiary-container": "#002109",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-bright": "#f9f9ff",
+                        "on-secondary-fixed": "#001e2c",
+                        "surface-container-high": "#dee8ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#c4e7ff",
+                        "inverse-primary": "#bec6e0",
+                        "on-surface": "#111c2d",
+                        "primary-fixed": "#dae2fd",
+                        "on-primary-container": "#7c839b",
+                        "surface-container-low": "#f0f3ff",
+                        "on-tertiary-container": "#009844",
+                        "tertiary-fixed-dim": "#4ae176",
+                        "on-secondary-fixed-variant": "#004c69",
+                        "error": "#ba1a1a",
+                        "secondary": "#00668a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "xl": "40px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "button": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.55", "fontWeight": "400"}],
+                        "h2": ["32px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.45", "fontWeight": "400"}],
+                        "button": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid #E2E8F0;
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(17, 28, 45, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface h-screen flex overflow-hidden">
+<!-- Split Screen Layout -->
+<div class="flex w-full h-full">
+<!-- Left Side: Image/Brand Area -->
+<div class="hidden lg:flex lg:w-1/2 relative bg-primary-container items-center justify-center overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center opacity-60" data-alt="A professional, high-quality photograph of a person working focused at a clean, modern desk with a laptop, minimalist aesthetic, deep midnight blue and soft lighting, high contrast, representing discipline and consistency in daily habits." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADT5h43eIYeJlrb5mSOXwBdtMwSSnMVGQhKba07-4ZW-LVjnRjTXZjx6K-uPxDuuKsChVQVseaLC1pXtKgo7CbzF-VdlDwK-4Z2IIOVUtGG6ykcXHjjIJisT8C28XRod1UEhQXZ4z_9ZRq4PO4eKVg13yCIFvWRvPH_cb45a2y8JfbOho66s1p1p1zVaXeKp2D8hBuTfpKYd44jJfT8xhEHjELc1Z-V5EhJ1XQstYd1KZDUA1lEOmxJ98cZ-NdDGEzQiuDNbWOtMLO');">
+</div>
+<!-- Brand Overlay Content -->
+<div class="relative z-10 flex flex-col items-center justify-center p-xl max-w-lg text-center">
+<img alt="Daily Flow High Achiever Mode" class="mb-lg w-auto h-16 object-contain filter invert" src="https://lh3.googleusercontent.com/aida/ADBb0ujV17ia6CKgQ_grZSouh9P4dpHQOiObY2HQchNbyQwiff1eNXB4HIPkJqFZJPW950JKxPtGvIWjwBg7qcduKZBTcJ-OvLQzsmNhc7jugtsgzBxPVRPp-KRtuZO5mLBzMkMxltVrZlakJWyzN7f8VhVF08ObTz8cxnXam01B_bvvcUN4JdsMlI099x8CGf9bWElIj6DxKJKQmK3FJNOwiMsuLx5Ui37BF4dwcojHIsoeZReS7V1xH6Hs0hL3VrEwhtKXxdbjCjb6z2Y"/>
+<h1 class="font-h1 text-h1 text-on-primary mb-md">High Achiever Mode</h1>
+<p class="font-body-lg text-body-lg text-on-primary-container">Unlock your full potential with Daily Flow. Organize, prioritize, and conquer your day with unparalleled clarity.</p>
+</div>
+<!-- Decorative Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container via-primary-container/40 to-transparent opacity-90"></div>
+</div>
+<!-- Right Side: Login Form Area -->
+<div class="w-full lg:w-1/2 flex items-center justify-center p-md sm:p-xl bg-surface-container-lowest relative overflow-y-auto">
+<!-- Mobile Brand Header (Visible only on small screens) -->
+<div class="absolute top-md left-md lg:hidden">
+<img alt="Daily Flow Logo" class="h-8 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uj0rCVilCEuxGDwgKXNxeFcJlwmg1mY1Co23AWh0XhDotSa-WLyi2Pw0R4m3C4tsJYYnB0mOQCCVn0yKlFVHuiecIq2RBlW7a5o5VQaYA-xrOHx7AkkMbejE02zyWQbDjADAmgsBx2w03qrNNpjLI9s4Oir_p2udrD0jksftuT9Q_EqAGwj8IAASLww0ej2QL5nDk4Eryy6BzslOvQ520B6hWyXPNlVE8-nt4GYR5ySUt2tmQu8_H9WyQ5gTZ2FsHu7YGabIuhoBL8"/>
+</div>
+<!-- Login Card -->
+<div class="w-full max-w-md glass-panel rounded-xl p-lg sm:p-xl ambient-shadow">
+<div class="text-center mb-xl">
+<h2 class="font-h2 text-h2 text-on-surface mb-xs">Welcome back</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Sign in to continue your journey.</p>
+</div>
+<form class="space-y-lg">
+<!-- Email Input -->
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface uppercase block" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline-variant">mail</span>
+<input class="w-full pl-xl pr-sm py-sm rounded-lg border border-[#E2E8F0] bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-secondary-container focus:ring-2 focus:ring-secondary-container focus:ring-opacity-50 focus:outline-none transition-all placeholder:text-outline-variant" id="email" placeholder="you@example.com" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="space-y-xs">
+<div class="flex justify-between items-center">
+<label class="font-label-caps text-label-caps text-on-surface uppercase" for="password">Password</label>
+<a class="font-body-sm text-body-sm text-secondary hover:text-secondary-fixed transition-colors" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline-variant">lock</span>
+<input class="w-full pl-xl pr-sm py-sm rounded-lg border border-[#E2E8F0] bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-secondary-container focus:ring-2 focus:ring-secondary-container focus:ring-opacity-50 focus:outline-none transition-all placeholder:text-outline-variant" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-sm top-1/2 -translate-y-1/2 text-outline-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- Sign In Button -->
+<button class="w-full py-md bg-primary-container text-on-primary font-button text-button rounded-lg hover:bg-secondary transition-colors duration-200 flex items-center justify-center gap-xs" type="button">
+                        Sign In
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="mt-xl mb-lg relative flex items-center">
+<div class="flex-grow border-t border-[#E2E8F0]"></div>
+<span class="flex-shrink-0 mx-sm font-label-caps text-label-caps text-outline uppercase">Or continue with</span>
+<div class="flex-grow border-t border-[#E2E8F0]"></div>
+</div>
+<!-- Social Login Options -->
+<div class="grid grid-cols-2 gap-md">
+<button class="flex items-center justify-center gap-sm py-sm px-md rounded-lg border border-[#E2E8F0] bg-surface-container-lowest hover:bg-surface-container-low transition-colors text-on-surface font-button text-button" type="button">
+<svg class="w-5 h-5" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>
+                        Google
+                    </button>
+<button class="flex items-center justify-center gap-sm py-sm px-md rounded-lg border border-[#E2E8F0] bg-surface-container-lowest hover:bg-surface-container-low transition-colors text-on-surface font-button text-button" type="button">
+<span class="material-symbols-outlined" data-weight="fill">ios</span>
+                        Apple
+                    </button>
+</div>
+<!-- Sign Up Toggle -->
+<div class="mt-xl text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Don't have an account? 
+                        <a class="font-button text-button text-secondary hover:text-secondary-fixed transition-colors ml-xs" href="#">Sign Up</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

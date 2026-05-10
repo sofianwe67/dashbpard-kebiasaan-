@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Smart Suggestions - Daily Flow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary-container": "#131b2e",
+                "tertiary-fixed-dim": "#4ae176",
+                "surface-variant": "#d8e3fb",
+                "surface-container": "#e7eeff",
+                "error-container": "#ffdad6",
+                "primary-fixed": "#dae2fd",
+                "on-primary-fixed-variant": "#3f465c",
+                "inverse-surface": "#263143",
+                "secondary": "#00668a",
+                "inverse-primary": "#bec6e0",
+                "on-tertiary": "#ffffff",
+                "on-primary-container": "#7c839b",
+                "on-tertiary-fixed-variant": "#005321",
+                "tertiary-fixed": "#6bff8f",
+                "primary": "#000000",
+                "surface-tint": "#565e74",
+                "surface-container-highest": "#d8e3fb",
+                "outline": "#76777d",
+                "surface-dim": "#cfdaf2",
+                "surface": "#f9f9ff",
+                "tertiary-container": "#002109",
+                "surface-container-high": "#dee8ff",
+                "on-secondary": "#ffffff",
+                "tertiary": "#000000",
+                "secondary-container": "#40c2fd",
+                "on-tertiary-container": "#009844",
+                "inverse-on-surface": "#ecf1ff",
+                "on-background": "#111c2d",
+                "primary-fixed-dim": "#bec6e0",
+                "on-surface": "#111c2d",
+                "on-surface-variant": "#45464d",
+                "on-primary": "#ffffff",
+                "on-tertiary-fixed": "#002109",
+                "on-secondary-container": "#004d6a",
+                "surface-bright": "#f9f9ff",
+                "on-secondary-fixed-variant": "#004c69",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed": "#c4e7ff",
+                "outline-variant": "#c6c6cd",
+                "on-primary-fixed": "#131b2e",
+                "error": "#ba1a1a",
+                "background": "#f9f9ff",
+                "surface-container-low": "#f0f3ff",
+                "on-error-container": "#93000a",
+                "on-error": "#ffffff",
+                "secondary-fixed-dim": "#7bd0ff",
+                "on-secondary-fixed": "#001e2c"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "unit": "4px",
+                "sm": "8px",
+                "container-max": "1280px",
+                "xs": "4px",
+                "md": "16px",
+                "lg": "24px",
+                "gutter": "24px",
+                "xl": "40px"
+        },
+        "fontFamily": {
+                "body-sm": [
+                        "Inter"
+                ],
+                "button": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "h1": [
+                        "Inter"
+                ],
+                "h2": [
+                        "Inter"
+                ],
+                "label-caps": [
+                        "Inter"
+                ],
+                "h3": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "1.45",
+                                "fontWeight": "400"
+                        }
+                ],
+                "button": [
+                        "14px",
+                        {
+                                "lineHeight": "1",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ],
+                "h1": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "h2": [
+                        "32px",
+                        {
+                                "lineHeight": "1.25",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "h3": [
+                        "24px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.55",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row antialiased">
+<!-- TopAppBar (Mobile/Tablet) -->
+<header class="md:hidden fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-surface shadow-sm">
+<div class="font-h2 text-h2 font-bold text-primary">
+            Daily Flow
+        </div>
+<div class="flex gap-md">
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-200 p-sm rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-200 p-sm rounded-full">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant/30 ml-sm" data-alt="A small, circular user profile picture showing a minimalist white initial 'U' on a dark navy blue background, indicating a high-achieving user profile in a clean, professional app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv939qqKj2nCQHJPPUJ56Z2nb1Vt5vhnygiUsnRkE9YOwDMkHu7R1YKnuujpCAcYkBGKV6HBcA6klcX8j4B2WhROPupehxkW3-a5j85iBHg_2apkK0BwOSr4Pb9hpV3pvQ6lUFOCT2dfztQRwjpxcyLZKc_rb7IfPAnhIodykxJVZTiZyHqfVH3YH5-C55ma2s7n8U5LgYcCnFTqhdUkaEtS5xTtjztpTdtT0orw6Hso1lHUIWN9qc_4Myx7pn3i2reBbhEEBxEfuT">
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden lg:flex flex-col h-screen fixed left-0 top-0 py-lg bg-white border-r border-surface-container w-64 z-50 pr-0">
+<!-- Sidebar Header -->
+<div class="mb-xl px-lg stitch-anim-fade-in"><div class="flex items-center gap-4 stitch-anim-fade-in">
+  <img alt="User profile" class="w-12 h-12 rounded-[1rem] border-2 border-sky-100 shadow-sm rounded-full" src="https://lh3.googleusercontent.com/aida/ADBb0ugJDBhHrIb5HpDEe8dhu3pZfsXYbZIMFtHEFWpgU96m7D52Qd061C3oznyld9sjs43sOcEdUdYVbMqLFxBPhDZLcDutgjQ3NDQ_0Gem9i82Fg6Cml6jaSxeU_lhH8wu4w-aUvcIk-sZVTcto8fmtoiL3G6WaOz7qC0l-b-4KaDCYWImMMyfUbHmiSUD-L_4GDnRlkvQY_LUig8nH9iZAxqZbZcaVMAj1yuOZDYo5PaMhc6lQaXVSrvvi2QQAsiG82pkai66YiSCuw" style="object-fit: cover; object-position: left center;">
+  <div class="flex flex-col">
+    <span class="text-[24px] font-bold text-[#0F172A] leading-tight tracking-tight">Daily Flow</span>
+    <span class="text-[14px] text-slate-500 font-medium">High Achiever Mode</span>
+  </div>
+</div></div>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col gap-1 mt-6">
+<a class="flex items-center gap-md px-lg py-3 text-surface-tint hover:bg-surface-container-low transition-colors rounded-r-full mr-4" href="#">
+<span class="material-symbols-outlined font-light text-[24px]">grid_view</span>
+<span class="font-body-md text-[16px]">Overview</span>
+</a>
+<a class="flex items-center gap-md px-lg py-3 text-surface-tint hover:bg-surface-container-low transition-colors rounded-r-full mr-4 stitch-anim-fade-in" href="#"><span class="material-symbols-outlined font-light text-[24px]">checklist</span><span class="font-body-md text-[16px]">My Tasks</span></a>
+<div class="relative flex items-center group stitch-anim-fade-in"><div class="absolute left-0 w-1.5 h-8 bg-[#0ea5e9] rounded-r-full group-hover:h-10 transition-all duration-200"></div><a class="flex flex-1 items-center gap-md px-lg py-3 bg-[#f0f9ff] text-[#0ea5e9] rounded-r-full ml-0 mr-4" href="#"><span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">analytics</span><span class="font-body-md text-[16px] font-semibold">Insights</span></a></div>
+<a class="flex items-center gap-md px-lg py-3 text-surface-tint hover:bg-surface-container-low transition-colors rounded-r-full mr-4" href="#">
+<span class="material-symbols-outlined font-light text-[24px]">settings</span>
+<span class="font-body-md text-[16px]">Settings</span>
+</a>
+</div>
+<!-- Bottom Action -->
+<div class="mt-auto pb-lg px-md">
+<button class="w-full bg-[#0ea5e9] text-white font-button text-[16px] py-3.5 rounded-full hover:bg-[#0284c7] transition-all flex items-center justify-center gap-2 active:scale-95 shadow-md shadow-sky-500/20">
+<span class="material-symbols-outlined text-[20px] font-medium">add</span> New Task
+        </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full lg:pl-64 pt-20 lg:pt-0 pb-24 md:pb-0 min-h-screen">
+<div class="max-w-container-max mx-auto p-gutter lg:p-xl h-full flex flex-col">
+<header class="mb-xl">
+<h2 class="font-h1 text-h1 text-primary">Smart Suggestions</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm max-w-2xl">AI-driven insights to optimize your daily momentum and cognitive performance.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg lg:gap-xl auto-rows-auto">
+<!-- Card 1: AI Insight (Featured, spans 2 columns) -->
+<div class="lg:col-span-2 bg-surface rounded-xl border border-surface-container shadow-sm hover:shadow-md transition-shadow duration-300 p-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-surface-container-highest opacity-30 rounded-full blur-3xl -mr-20 -mt-20 group-hover:opacity-50 transition-opacity"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-sm mb-lg">
+<div class="bg-surface-container text-primary p-sm rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<span class="font-label-caps text-label-caps tracking-wider text-on-surface-variant uppercase">Optimization Insight</span>
+</div>
+<h3 class="font-h2 text-h2 text-primary mb-md">Shift Workout for Peak Focus</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-xl max-w-2xl">
+                            Analyzing your deep-work completion rates over the past 14 days reveals a pattern. Moving your 8:00 AM exercise block to 4:00 PM could potentially increase your unbroken morning focus time by up to 20%, aligning better with your natural cognitive peaks.
+                        </p>
+</div>
+<div class="flex flex-wrap items-center gap-md mt-auto z-10">
+<button class="bg-primary text-on-primary font-button text-button px-xl py-md rounded-lg hover:bg-primary/90 transition-colors shadow-sm">
+                            Apply to Schedule
+                        </button>
+<button class="border border-outline-variant text-on-surface font-button text-button px-lg py-md rounded-lg hover:bg-surface-container transition-colors">
+                            Dismiss
+                        </button>
+</div>
+</div>
+<!-- Card 2: Daily Motivation (Curated Quote) -->
+<div class="lg:col-span-1 bg-surface rounded-xl border border-surface-container shadow-sm p-xl flex flex-col">
+<div class="flex items-center gap-sm mb-lg">
+<span class="material-symbols-outlined text-outline">format_quote</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">Daily Momentum</span>
+</div>
+<blockquote class="flex-1 flex flex-col justify-center">
+<p class="font-h3 text-h3 text-primary italic leading-snug mb-lg">
+                                "The secret of getting ahead is getting started. The secret of getting started is breaking your complex, overwhelming tasks into small, manageable tasks."
+                            </p>
+<footer class="font-body-md text-body-md text-on-surface-variant mt-auto">
+                                — Mark Twain
+                            </footer>
+</blockquote>
+</div>
+<!-- Card 3: Rest Recommendation (Pomodoro) -->
+<div class="lg:col-span-3 bg-surface rounded-xl border border-surface-container shadow-sm p-xl lg:p-xl flex flex-col md:flex-row items-center justify-between gap-xl hover:shadow-md transition-shadow">
+<div class="flex-1 max-w-2xl">
+<div class="flex items-center gap-sm mb-sm">
+<div class="bg-surface-container text-tertiary-fixed-dim p-xs rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+</div>
+<span class="font-label-caps text-label-caps tracking-wider text-tertiary-fixed-dim uppercase">Cognitive Reset</span>
+</div>
+<h3 class="font-h2 text-h2 text-primary mb-md">Time for a Strategic Pause</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">
+                            You've been in high-focus mode for 90 minutes. A short Pomodoro break will help clear working memory and maintain your performance curve for the next task block.
+                        </p>
+<div class="flex gap-sm">
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-surface-container rounded font-body-sm text-body-sm text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span> 25m Focus</span>
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-surface-container rounded font-body-sm text-body-sm text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-surface-tint"></span> 5m Rest</span>
+</div>
+</div>
+<!-- Pomodoro Timer UI -->
+<div class="w-full md:w-auto bg-surface-container-low rounded-xl p-lg flex flex-col items-center justify-center min-w-[300px] border border-surface-container-high">
+<div class="font-h1 text-[56px] font-bold text-primary tracking-tighter mb-lg font-mono">
+                            05:00
+                        </div>
+<div class="flex items-center gap-md w-full">
+<button class="flex-1 bg-tertiary-fixed-dim text-on-tertiary-fixed font-button text-button px-lg py-md rounded-lg hover:bg-tertiary-fixed transition-colors shadow-sm flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span> Start Rest
+                            </button>
+<button class="p-md text-on-surface-variant hover:bg-surface-container hover:text-primary rounded-lg transition-colors border border-outline-variant/50">
+<span class="material-symbols-outlined">restart_alt</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile/Tablet) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm py-2 pb-safe bg-surface border-t border-surface-container shadow-[0px_-4px_20px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-md py-1 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-xs text-[24px]">dashboard</span>
+<span class="font-label-caps text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-md py-1 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-xs text-[24px]">calendar_today</span>
+<span class="font-label-caps text-[10px]">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-surface-container text-primary rounded-lg px-md py-1 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-xs text-[24px]" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<span class="font-label-caps text-[10px] font-semibold">Suggestions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-md py-1 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-xs text-[24px]">person</span>
+<span class="font-label-caps text-[10px]">Profile</span>
+</a>
+</nav>
+
+
+</body></html>
